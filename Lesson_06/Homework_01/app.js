@@ -171,4 +171,4 @@ this.addEventListener("keypress", (e)=>{
 	if(e.keyCode == 122){
 		console.log("Message will be closed");
 	}
-})
+});
