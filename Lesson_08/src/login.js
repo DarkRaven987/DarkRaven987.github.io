@@ -2,6 +2,7 @@ import {Builder} from "./builder";
 import {UserData} from "./userData";
 
 
+
 let inDB = UserData.getUsers();
 
 export class Login{
@@ -30,7 +31,7 @@ export class Login{
 
 		let divPass = Builder.attachChilderToParent(Builder.createNewElement("div", null, "form-group"), [labelPass,passInput]);
 
-		const button = Builder.createNewElement("button", "Login", "btn btn-primary",[{"name":"type", "value":"submit"},{"name":"id", "value":"loginBtn"}]);
+		const button = Builder.createNewElement("button", "Login", "btn btn-primary",[{"name":"type", "value":"submit"}]);
 
 		let form = Builder.attachChilderToParent(Builder.createNewElement("form", null, null, [{"name":"id", "value":"login_form"}]), [divEmail, divPass, button]);
 
@@ -40,7 +41,6 @@ export class Login{
 	}
 
 	submit(){
-		
 		let emailInput = document.getElementById("exampleInputEmail1").value;
 		let passInput = document.getElementById("exampleInputPassword1").value;
 		let isLogin = false;
@@ -52,13 +52,9 @@ export class Login{
 		})
 		
 		if(isLogin){
-			alert("All is ok!");
+			localStorage.setItem("isLogin", true);
 		}else{
 			alert("Something`s not right...");
 		}
-		
-		
-		
-
 	}
 }
