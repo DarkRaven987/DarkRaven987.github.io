@@ -38,8 +38,7 @@ export class Login{
 		document.getElementById("login_form").addEventListener("submit", this.submit, false);
 	}
 
-	submit(e){
-				
+	submit(e){				
 		e.preventDefault();
 		console.log("submit");
 		
