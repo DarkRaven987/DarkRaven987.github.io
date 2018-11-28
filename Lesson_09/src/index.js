@@ -6,7 +6,6 @@ import {Login} from "./login"
 import {PageTitle} from "./pageTitle"
 import {Navigation} from "./navigation"
 
-Data.loadUsers();
 const isLogin = localStorage.getItem("isLogin");
 
 new Navigation("pageNav").renderHtmlElement(isLogin);
@@ -15,8 +14,8 @@ new PageTitle("pageTitle").renderHtmlElement(isLogin);
 
 switch (location.hash) {
 	case "#logout":
-        localStorage.removeItem("isLogin");
-        location = location.origin;
+    localStorage.removeItem("isLogin");
+    location = location.origin;
 	case "#cart":
         console.log(location.hash);
 	default:

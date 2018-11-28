@@ -39,7 +39,7 @@ export class Login{
 	}
 
 	submit(e){
-		
+		e.preventDefault();
 		console.log("submit");
 		
 		let emailInput = document.getElementById("exampleInputEmail1").value;
@@ -54,16 +54,12 @@ export class Login{
 
 		if(isLogin){
 			localStorage.setItem("isLogin", true);
+			location = location.origin;
 		}else{
 			alert("Something`s not right...");
 		}
 
 		// console.log(/[a-zA-Z]{2,12}/.test(e.target[0].value));
 
-
-		// Validation
-
-		//localStorage.setItem("isLogin", true);
-		//location = location.origin;
 	}
 }
